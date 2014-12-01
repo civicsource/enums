@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+	<PropertyGroup>
+		<configuration Condition="'$(configuration)'==''">Debug</configuration>
+
+		<prerelease Condition="$(branch) == 'master'"></prerelease>
+		<prerelease Condition="$(branch) != 'master'">$(branch)</prerelease>
+		<build Condition="$(BUILD_NUMBER) == ''">0</build>
+		<build Condition="$(BUILD_NUMBER) != ''">$(BUILD_NUMBER)</build>
+
+		<major>1</major>
+		<minor>0</minor>
+		<patch>0</patch>
+
+		<semver Condition="$(prerelease) == ''">$(major).$(minor).$(patch)+{build.number}</semver>
+		<semver Condition="$(prerelease) != ''">$(major).$(minor).$(patch)-$(prerelease)+{build.number}</semver>
+		<buildOptions>Configuration=$(configuration);major=$(major);minor=$(minor);patch=$(patch);prerelease=$(prerelease);build=$(build)</buildOptions>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<solutions Include="Enums.sln" />
+	</ItemGroup>
+
+	<Target Name="Build">
+		<TeamCitySetBuildNumber BuildNumber="$(semver)" />
+		<MSBuild Projects="@(solutions)" Properties="$(buildOptions)" />
+	</Target>
+
+	<Target Name="Test" DependsOnTargets="Build">
+		<ItemGroup>
+			<testProjects Include="Tests\Tests.csproj" />
+		</ItemGroup>
+
+		<MSBuild Projects="@(testProjects)" Targets="Test" Properties="$(buildOptions)" />
+	</Target>
+</Project>
