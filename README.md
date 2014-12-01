@@ -53,3 +53,13 @@ foreach (var val in values)
 	//this will output "Blues: Alice's Wonderland Blue (AliceBlue)" for Color.AliceBlue
 }
 ```
+
+### States/Provinces & Countries
+
+Install the [geography nuget package](https://www.nuget.org/packages/Archon.Enums.Geography/)
+
+```
+install-package Archon.Enums.Geography
+```
+
+This includes two enum types, `StateProvince` and `Country` which enumerate US states, Canadian provinces, and countries utilizing the aforementioned framework with user friendly descriptions & categories.

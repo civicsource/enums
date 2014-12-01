@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{C3A5273B-1D73-4EB3-BC3D-9A2180A70806}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geography", "Geography\Geography.csproj", "{F7923294-F298-4878-A527-94449CFC5720}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,16 @@ Global
 		{C3A5273B-1D73-4EB3-BC3D-9A2180A70806}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{C3A5273B-1D73-4EB3-BC3D-9A2180A70806}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{C3A5273B-1D73-4EB3-BC3D-9A2180A70806}.Release|x86.ActiveCfg = Release|Any CPU
+		{F7923294-F298-4878-A527-94449CFC5720}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7923294-F298-4878-A527-94449CFC5720}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7923294-F298-4878-A527-94449CFC5720}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F7923294-F298-4878-A527-94449CFC5720}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F7923294-F298-4878-A527-94449CFC5720}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F7923294-F298-4878-A527-94449CFC5720}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7923294-F298-4878-A527-94449CFC5720}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7923294-F298-4878-A527-94449CFC5720}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F7923294-F298-4878-A527-94449CFC5720}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F7923294-F298-4878-A527-94449CFC5720}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
