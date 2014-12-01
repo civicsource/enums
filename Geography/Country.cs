@@ -4,9 +4,6 @@ namespace Archon.Enums
 {
 	public enum Country
 	{
-		[Description("---")]
-		Unspecified,
-
 		[Description("Andorra")]
 		AD,
 

@@ -4,8 +4,6 @@ namespace Archon.Enums
 {
 	public enum StateProvince
 	{
-		Unspecified,
-
 		// US States
 
 		[Category("United States")]
