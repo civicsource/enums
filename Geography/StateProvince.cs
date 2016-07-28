@@ -246,6 +246,10 @@ namespace Archon.Enums
 		[Description("Virgin Islands")]
 		VI,
 
+		[Category("United States Possessions")]
+		[Description("Minor Outlying Islans")]
+		UM,
+
 		// Military "States"
 
 		[Category("United States Military States")]
