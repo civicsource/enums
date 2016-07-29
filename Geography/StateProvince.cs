@@ -247,7 +247,7 @@ namespace Archon.Enums
 		VI,
 
 		[Category("United States Possessions")]
-		[Description("Minor Outlying Islans")]
+		[Description("Minor Outlying Islands")]
 		UM,
 
 		// Military "States"
