@@ -69,7 +69,7 @@ namespace Archon.Enums
 
 		public static T GetEnumValueFromEnumDescription<T>(this string description)
 		{
-			var type = typeof(T);
+			var type = typeof(T).GetTypeInfo();
 
 			if (!type.IsEnum)
 				throw new ArgumentException();
