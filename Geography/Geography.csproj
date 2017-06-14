@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.5</TargetFramework>
+    <TargetFramework>netstandard1.0</TargetFramework>
     <AssemblyName>Archon.Enums.Geography</AssemblyName>
     <RootNamespace>Archon.Enums</RootNamespace>
     <Product>Archon Framework Library™</Product>
