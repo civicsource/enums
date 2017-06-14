@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
 
@@ -40,13 +41,13 @@ namespace Archon.Enums
 			// By default, the result of Spaceify is just ToString with a space in front of each capital letter
 			string enumDescription = Spaceify(value.ToString());
 
-			MemberInfo[] memberInfo = value.GetType().GetMember(value.ToString());
+			MemberInfo[] memberInfo = value.GetType().GetTypeInfo().GetMember(value.ToString());
 			if (memberInfo != null && memberInfo.Length == 1)
 			{
-				object[] customAttributes = memberInfo[0].GetCustomAttributes(typeof(DescriptionAttribute), false);
-				if (customAttributes.Length > 0)
+				var customAttributes = memberInfo[0].GetCustomAttributes(typeof(DescriptionAttribute), false);
+				if (customAttributes.Any())
 				{
-					enumDescription = ((DescriptionAttribute)customAttributes[0]).Description;
+					enumDescription = ((DescriptionAttribute)customAttributes.First()).Description;
 				}
 			}
 
@@ -65,13 +66,13 @@ namespace Archon.Enums
 		{
 			string category = null;
 
-			MemberInfo[] memberInfo = value.GetType().GetMember(value.ToString());
+			MemberInfo[] memberInfo = value.GetType().GetTypeInfo().GetMember(value.ToString());
 			if (memberInfo != null && memberInfo.Length == 1)
 			{
-				object[] customAttributes = memberInfo[0].GetCustomAttributes(typeof(CategoryAttribute), false);
-				if (customAttributes.Length > 0)
+				var customAttributes = memberInfo[0].GetCustomAttributes(typeof(CategoryAttribute), false);
+				if (customAttributes.Any())
 				{
-					category = ((CategoryAttribute)customAttributes[0]).Category;
+					category = ((CategoryAttribute)customAttributes.First()).Category;
 				}
 			}
 
